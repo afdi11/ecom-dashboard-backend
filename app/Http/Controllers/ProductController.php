@@ -19,4 +19,13 @@ class ProductController extends Controller
     function listProduct(){
         return Product::all();
     }
+    function deleteProduct($id){
+        // $result=Product::where('id',$id)->first();
+        $result=Product::where('id',$id)->delete();
+        if($result){
+            return ["Result"=>"Product telah berhasil dihapus"];
+        }else{
+            return ["Result"=>"Operation Failed"];
+        }
+    }
 }
