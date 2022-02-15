@@ -33,17 +33,17 @@ class ProductController extends Controller
     }
     function updateProduct($id,Request $request){
         $product=Product::find($id);
-        if($request->input('Nama')){
-            $product->Nama=$request->input('Nama');
+        if($request->input('nama')){
+            $product->Nama=$request->input('nama');
         }
-        if($request->input('Harga')){
-            $product->Harga=$request->input('Harga');
+        if($request->input('price')){
+            $product->Harga=$request->input('price');
         }
-        if($request->input('Deskripsi')){
-            $product->Deskripsi=$request->input('Deskripsi');
+        if($request->input('deskripsi')){
+            $product->Deskripsi=$request->input('deskripsi');
         }
-        if($request->file('File_path')){
-            $product->File_path=$request->file('File_path')->store('products');
+        if($request->file('dokument')){
+            $product->File_path=$request->file('dokument')->store('products');
         }
         $product->save();
         $product=Product::find($id);
