@@ -31,4 +31,7 @@ class ProductController extends Controller
     function getProduct($id){
         return Product::find($id);
     }
+    function updateProduct($id,Request $req){
+        return $id;
+    }
 }
